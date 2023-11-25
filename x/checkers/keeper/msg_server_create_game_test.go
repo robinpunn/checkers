@@ -221,3 +221,17 @@ func TestCreateGameEmptyRedAddress(t *testing.T) {
 		"red address is invalid: : empty address string is not allowed",
 		err.Error())
 }
+
+func TestSavedCreatedDeadlineIsParseable(t *testing.T) {
+	msgSrvr, keeper, context := setupMsgServerCreateGame(t)
+	ctx := sdk.UnwrapSDKContext(context)
+	msgSrvr.CreateGame(context, &types.MsgCreateGame{
+		Creator: alice,
+		Black:   bob,
+		Red:     carol,
+	})
+	game, found := keeper.GetStoredGame(ctx, "1")
+	require.True(t, found)
+	_, err := game.GetDeadlineAsTime()
+	require.Nil(t, err)
+}
