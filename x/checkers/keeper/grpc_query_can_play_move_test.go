@@ -55,6 +55,88 @@ var (
 			err:      "rpc error: code = InvalidArgument desc = invalid request",
 		},
 		{
+			desc: "Unknown game, wrong",
+			game: types.StoredGame{
+				Index:  "1",
+				Board:  "*b*b*b*b|b*b*b*b*|*b*b*b*b|********|********|r*r*r*r*|*r*r*r*r|r*r*r*r*",
+				Turn:   "b",
+				Winner: "*",
+			},
+			request: &types.QueryCanPlayMoveRequest{
+				GameIndex: "2",
+				Player:    "b",
+				FromX:     1,
+				FromY:     2,
+				ToX:       2,
+				ToY:       3,
+			},
+			response: nil,
+			err:      "2: game by id not found",
+		},
+		{
+			desc: "Game finished, wrong",
+			game: types.StoredGame{
+				Index:  "1",
+				Board:  "*b*b****|**b*b***|*****b**|********|***B****|********|*****b**|********",
+				Turn:   "r",
+				Winner: "b",
+			},
+			request: &types.QueryCanPlayMoveRequest{
+				GameIndex: "1",
+				Player:    "u",
+				FromX:     1,
+				FromY:     2,
+				ToX:       2,
+				ToY:       3,
+			},
+			response: &types.QueryCanPlayMoveResponse{
+				Possible: false,
+				Reason:   "game is already finished",
+			},
+			err: "nil",
+		},
+		{
+			desc: "Game not parseable, wrong",
+			game: types.StoredGame{
+				Index:  "1",
+				Board:  "*b*b*b*b|b*b*b*b*|*b*b*b*b|********|********|r*r*r*r*|*r*r*r*r",
+				Turn:   "b",
+				Winner: "*",
+			},
+			request: &types.QueryCanPlayMoveRequest{
+				GameIndex: "1",
+				Player:    "b",
+				FromX:     1,
+				FromY:     2,
+				ToX:       2,
+				ToY:       3,
+			},
+			response: nil,
+			err:      "game cannot be parsed: invalid board string: *b*b*b*b|b*b*b*b*|*b*b*b*b|********|********|r*r*r*r*|*r*r*r*r",
+		},
+		{
+			desc: "First move by unknown, wrong",
+			game: types.StoredGame{
+				Index:  "1",
+				Board:  "*b*b*b*b|b*b*b*b*|*b*b*b*b|********|********|r*r*r*r*|*r*r*r*r|r*r*r*r*",
+				Turn:   "b",
+				Winner: "*",
+			},
+			request: &types.QueryCanPlayMoveRequest{
+				GameIndex: "1",
+				Player:    "u",
+				FromX:     1,
+				FromY:     2,
+				ToX:       2,
+				ToY:       3,
+			},
+			response: &types.QueryCanPlayMoveResponse{
+				Possible: false,
+				Reason:   "message creator is not a player: u",
+			},
+			err: "nil",
+		},
+		{
 			desc: "First move by red, wrong",
 			game: types.StoredGame{
 				Index:  "1",
