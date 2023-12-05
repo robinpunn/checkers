@@ -5,3 +5,5 @@ release/
 .vscode/
 .DS_Store
 scripts/node_modules
+client/node_modules
+client/.env
