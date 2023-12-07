@@ -34,6 +34,5 @@
         "noUnusedLocals": true,
         "allowSyntheticDefaultImports": true,
         "downlevelIteration": true,
-        "ignoreDeprecations": "5.0"
     }
 }

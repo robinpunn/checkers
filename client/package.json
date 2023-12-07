@@ -1,10 +1,11 @@
 {
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "react-test": "react-scripts test --env=jsdom",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test-react": "react-app-rewired test",
     "deploy": "ren .\\build\\index.html 200.html & surge .\\build",
-    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha --require ts-node/register 'test/**/*.ts'"
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha --require ts-node/register 'test/**/*.ts'",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@cosmjs/stargate": "0.28.11",
@@ -38,6 +39,7 @@
     "chai": "4.3.6",
     "dotenv": "16.0.1",
     "mocha": "10.0.0",
+    "react-app-rewired": "2.2.1",
     "ts-node": "10.9.1",
     "typescript": "4.6.3"
   },
