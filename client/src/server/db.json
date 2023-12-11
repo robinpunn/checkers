@@ -1,9 +1,68 @@
 {
     "status": {
         "block": {
-            "height": 0
+            "height": 5125
         }
     },
-    "players": {},
-    "games": {}
+    "players": {
+        "cosmos1a3l5u3g38dy8e7qnfs6qhy6nh3sxn2y0rwv9rk": {
+            "gameIds": []
+        },
+        "cosmos1f22cfv0rv8ztl9eqzhwz7zdj3fv9yjw6rlzjlc": {
+            "gameIds": []
+        },
+        "cosmos1fx6qlxwteeqxgxwsw83wkf4s9fcnnwk8z86sql": {
+            "gameIds": []
+        },
+        "cosmos1mql9aaux3453tdghk6rzkmk43stxvnvha4nv22": {
+            "gameIds": []
+        }
+    },
+    "games": {
+        "1": {
+            "redAddress": "cosmos1f22cfv0rv8ztl9eqzhwz7zdj3fv9yjw6rlzjlc",
+            "blackAddress": "cosmos1a3l5u3g38dy8e7qnfs6qhy6nh3sxn2y0rwv9rk",
+            "deleted": true
+        },
+        "2": {
+            "redAddress": "cosmos1f22cfv0rv8ztl9eqzhwz7zdj3fv9yjw6rlzjlc",
+            "blackAddress": "cosmos1a3l5u3g38dy8e7qnfs6qhy6nh3sxn2y0rwv9rk",
+            "deleted": true
+        },
+        "3": {
+            "redAddress": "cosmos1f22cfv0rv8ztl9eqzhwz7zdj3fv9yjw6rlzjlc",
+            "blackAddress": "cosmos1a3l5u3g38dy8e7qnfs6qhy6nh3sxn2y0rwv9rk",
+            "deleted": true
+        },
+        "4": {
+            "redAddress": "cosmos1f22cfv0rv8ztl9eqzhwz7zdj3fv9yjw6rlzjlc",
+            "blackAddress": "cosmos1a3l5u3g38dy8e7qnfs6qhy6nh3sxn2y0rwv9rk",
+            "deleted": true
+        },
+        "5": {
+            "redAddress": "cosmos1mql9aaux3453tdghk6rzkmk43stxvnvha4nv22",
+            "blackAddress": "cosmos1fx6qlxwteeqxgxwsw83wkf4s9fcnnwk8z86sql",
+            "deleted": false
+        },
+        "6": {
+            "redAddress": "cosmos1mql9aaux3453tdghk6rzkmk43stxvnvha4nv22",
+            "blackAddress": "cosmos1fx6qlxwteeqxgxwsw83wkf4s9fcnnwk8z86sql",
+            "deleted": false
+        },
+        "7": {
+            "redAddress": "cosmos1mql9aaux3453tdghk6rzkmk43stxvnvha4nv22",
+            "blackAddress": "cosmos1fx6qlxwteeqxgxwsw83wkf4s9fcnnwk8z86sql",
+            "deleted": false
+        },
+        "8": {
+            "redAddress": "cosmos1mql9aaux3453tdghk6rzkmk43stxvnvha4nv22",
+            "blackAddress": "cosmos1fx6qlxwteeqxgxwsw83wkf4s9fcnnwk8z86sql",
+            "deleted": false
+        },
+        "9": {
+            "redAddress": "cosmos1mql9aaux3453tdghk6rzkmk43stxvnvha4nv22",
+            "blackAddress": "cosmos1fx6qlxwteeqxgxwsw83wkf4s9fcnnwk8z86sql",
+            "deleted": false
+        }
+    }
 }
