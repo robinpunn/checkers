@@ -29180,6 +29180,42 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
+  /robinpunn/checkers/leaderboard/params:
+    get:
+      summary: Parameters queries the parameters of the module.
+      operationId: RobinpunnCheckersLeaderboardParams
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              params:
+                description: params holds all the parameters of this module.
+                type: object
+            description: >-
+              QueryParamsResponse is response type for the Query/Params RPC
+              method.
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
   /tendermint/spn/claim/airdrop_supply:
     get:
       summary: Queries a AirdropSupply by index.
@@ -49592,6 +49628,16 @@ definitions:
         type: string
       fifoTailIndex:
         type: string
+  robinpunn.checkers.leaderboard.Params:
+    type: object
+    description: Params defines the parameters for the module.
+  robinpunn.checkers.leaderboard.QueryParamsResponse:
+    type: object
+    properties:
+      params:
+        description: params holds all the parameters of this module.
+        type: object
+    description: QueryParamsResponse is response type for the Query/Params RPC method.
   tendermint.spn.claim.ClaimRecord:
     type: object
     properties:
